@@ -54,6 +54,6 @@ class User extends Authenticatable
 
     public function routeNotificationForSns($notification)
     {
-        return '+60143381756';
+        return '+601165791212';
     }
 }
