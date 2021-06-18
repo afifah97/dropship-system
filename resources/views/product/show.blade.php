@@ -21,8 +21,11 @@
                             <span class="text-dark-50 flex-root font-weight-bold">Stock Left</span>
                             <span class="text-dark flex-root font-weight-bold">{{$product->stock}}</span>
                         </div>
-                        <a class="btn btn-danger" href="{{route("admin.product.delete", ['product' => $product->id])}}"> Delete</a>
-                        <!--end::Info-->
+                        <form action="{{route("admin.product.delete", ['product' => $product->id])}}" method="POST">
+                            @method('DELETE')
+                            @csrf
+                            <button class="btn btn-danger" type="submit"> Delete</a>
+                        </form>    
                     </div>
                     <!--end::Card Body-->
                 </div>
