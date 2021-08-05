@@ -215,7 +215,9 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        $product->delete();
+        //$product->delete();
+        $product->status = 'Inactive';
+        $product->save();
 
         return redirect()->route('admin.product.index')
         ->with('success', 'Product deleted successfully!');
